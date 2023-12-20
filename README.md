@@ -1,10 +1,10 @@
-# cs50
+## cs50
 
 In this rep I put algorithms exercices from the CS50 Harvard class.
 
 :-)
 
-## Binary Search
+### [Class 0] Binary Search
 
 Three search algorithms compare:
 
