@@ -1,5 +1,9 @@
 # cs50
 
+In this rep I put algorithms exercices from the CS50 Harvard class.
+
+:-)
+
 ## Binary Search
 
 Three search algorithms compare:
