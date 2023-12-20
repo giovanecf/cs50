@@ -2,6 +2,8 @@
 
 In this rep I put algorithms exercices from the CS50 Harvard class.
 
+https://ead.napratica.org.br/enrollments/9193282/courses/84414/course_contents/2135055
+
 :-)
 
 ### [Class 0] Binary Search
