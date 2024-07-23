@@ -3,25 +3,93 @@
 #include <string.h>
 #include <ctype.h>
 
-void citoa(long num, char snum[], int base);
+char* citoa(long num, char* snum, int base);
 void reverse(char str[], int length);
 long get_long(char* text);
 
+//git add .; git commit -m "changed logical path but leave in middle"; git push
+
+
+void check_credit_card_number(long cc_number)
+{
+	int base = 10;
+
+	int cc_number_digits = 1;
+	long cc_number_aux = cc_number;
+	while(cc_number_aux != 0)
+	{
+		cc_number_aux = cc_number_aux / 10;
+		cc_number_digits++;
+	}
+
+	printf("Digits: %d\n", cc_number_digits);
+	//Less than 10 digits
+	if(cc_number < 11)
+	{
+		printf("INVALID\n");
+	}
+
+	int cc_numbers_arr[cc_number_digits];
+	for(int i = cc_number_digits - 1; i >= 0; i--)
+	{
+		cc_numbers_arr[i] = cc_number % base;
+		cc_number = cc_number / base;
+	}
+
+	int first_step_sum = 0;
+	for(int i = 0; i < cc_number_digits; i++){
+		if(i % 2 == 0)
+		{
+			int current_product = cc_numbers_arr[i] * 2;
+			if(current_product > 9)
+			{
+				while(current_product != 0)
+				{
+					first_step_sum = first_step_sum + (current_product % base);
+					current_product = current_product / base;
+				}
+			}
+			else 
+			{
+				first_step_sum = first_step_sum + current_product;
+			}
+		}
+	}
+
+	printf("First Step Sum: %d\n", first_step_sum);
+
+	int second_step_sum = first_step_sum;
+	for(int i = 0; i < cc_number_digits; i++){
+		if(i % 2 != 0)
+		{
+			second_step_sum = second_step_sum + cc_numbers_arr[i];
+		}
+	}
+
+	printf("Second Step Sum: %d\n", first_step_sum);
+
+
+	//4003600000000014
+}
+
 int main(void)
 {
-	//long card_number = get_long("Insira o número do seu cartão: ");
-	//printf("Número do cartão de crédito: %ld\n", card_number);
+	long card_number = get_long("Insira o número do seu cartão: ");
 
-	char number_as_str[16];
+	// char card_number_as_str[16];
+	// citoa(card_number, card_number_as_str, 10);
 
-	int number;
+	// printf("Cartão informado: %s\n", card_number_as_str);
 
-	printf("Num: ");
-	scanf("%d", &number);
+	// long total = 0;
+	// for(int i = 0; i < strlen(card_number_as_str); i++){
+	// 	if(i % 2 == 0)
+	// 	{
+	// 		total = total + card_number_as_str[i] * 2;
+	// 	}
+	// }
 
-	citoa(number, number_as_str, 10);
-
-	printf("Str: %s", number_as_str);
+	check_credit_card_number(card_number);
 
 	printf("\n");
 
@@ -49,7 +117,7 @@ long get_long(char* text)
 		long_number = strtol(input, &endptr, 10);
 
 	}
-	while(long_number <= 0 || long_number > 9999999999999999 || (isspace(*endptr) || *endptr != '\0'));
+	while(long_number < 0 || long_number > 9999999999999999 || (isspace(*endptr) || *endptr != '\0'));
 	
 	return long_number;
 }
@@ -68,36 +136,52 @@ void reverse(char str[], int length)
     }
 }
 
-void citoa(long num, char snum[], int base)
+// A utility function to reverse a string
+void reverse_int(int str[], int length)
+{
+    int start = 0;
+    int end = length - 1;
+    while (start < end) {
+        int temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        end--;
+        start++;
+    }
+}
+
+char* citoa(long num, char* str, int base)
 {	
 	if(num == 0)
 	{
-		snum[0] = '0';
-		snum[1] = '\0';
-		return;
+		str[0] = '0';
+		str[1] = '\0';
+		return str;
 	}
 
-	int isNegative = 1;
-	if(num > 0)
+	int isNegative = 0;
+	if(num < 0 && base == 10)
 	{
-		isNegative = 0;
+		isNegative = 1;
 		num = -num;
 	}
 
 	int i = 0;
 	while(num != 0)
 	{
-		int rem = num % 10;
-		snum[i] = (base > 9) ? (rem - 10) + 'a' : rem + '0';
+		int rem = num % base;
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
 		num = num / base;
 	}
 
 	if(isNegative == 1)
 	{
-		snum[i++] = '-';
+		str[i++] = '-';
 	}
 
-	snum[i++] = '\0';
+	str[i] = '\0';
 
-	reverse(snum, i);
+	reverse(str, i);
+
+	return str;
 }
