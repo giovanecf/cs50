@@ -7,9 +7,6 @@ char* citoa(long num, char* snum, int base);
 void reverse(char str[], int length);
 long get_long(char* text);
 
-//git add .; git commit -m "changed logical path but leave in middle"; git push
-
-
 void check_credit_card_number(long cc_number)
 {
 	int base = 10;
@@ -23,7 +20,7 @@ void check_credit_card_number(long cc_number)
 	}
 
 	printf("Digits: %d\n", cc_number_digits);
-	//Less than 10 digits
+
 	if(cc_number < 11)
 	{
 		printf("INVALID\n");
