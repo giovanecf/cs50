@@ -11,6 +11,7 @@ void check_credit_card_number(long cc_number)
 {
 	int base = 10;
 
+	// Count how much digits the credit card number has
 	int cc_number_digits = 1;
 	long cc_number_aux = cc_number;
 	while(cc_number_aux != 0)
@@ -21,15 +22,17 @@ void check_credit_card_number(long cc_number)
 
 	printf("Digits: %d\n", cc_number_digits);
 
+	// Check for acceptable number of digits
 	if(cc_number < 11)
 	{
 		printf("INVALID\n");
 	}
 
+	// Create the digits array
 	int cc_numbers_arr[cc_number_digits];
-	for(int i = cc_number_digits - 1; i >= 0; i--)
+	for(int i = 0; i < cc_number_digits + 1; i++)
 	{
-		cc_numbers_arr[i] = cc_number % base;
+		cc_numbers_arr[cc_number_digits - i] = cc_number % base;
 		cc_number = cc_number / base;
 	}
 
@@ -38,10 +41,15 @@ void check_credit_card_number(long cc_number)
 		if(i % 2 == 0)
 		{
 			int current_product = cc_numbers_arr[i] * 2;
+			
+			printf("A: %d - %d - %d\n", i, cc_numbers_arr[i], current_product);
+
 			if(current_product > 9)
 			{
 				while(current_product != 0)
 				{
+					printf("B: %d\n", (current_product % base));
+
 					first_step_sum = first_step_sum + (current_product % base);
 					current_product = current_product / base;
 				}
@@ -50,6 +58,8 @@ void check_credit_card_number(long cc_number)
 			{
 				first_step_sum = first_step_sum + current_product;
 			}
+
+			printf("Sum: %d\n", first_step_sum);
 		}
 	}
 

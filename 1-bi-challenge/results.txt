@@ -1,0 +1,67 @@
+ENVIROMENT:
+
+            .-/+oossssoo+/-.               geovani@SeuMadruga 
+        `:+ssssssssssssssssss+:`           ------------------ 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 24.04 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: C4400 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.8.0-38-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 1 day, 1 hour, 6 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 2114 (dpkg), 12 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.21 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1366x768 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 46.0 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: AMD Ryzen 5 PRO 4650GE with Rad 
+    .ossssssssssssssssssdMMMNysssso.       GPU: AMD ATI Radeon RX Vega 6 
+      -+sssssssssssssssssyyyssss+-         Memory: 8315MiB / 15359MiB 
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.                                       
+                                                                   
+
+
+Results:
+
+C Language: 
+    Compiler: g++ (13.2)
+    Time: 1.3s
+
+C++ Language: 
+    Compiler: g++ (13.2)
+    Time: 1.4s
+
+JS: 
+    Interpreter: Node (20.15.1)
+    Time: 0.4s
+
+Python: 
+    Interpreter: Python3 (3.12.3)
+    Time: 50s
+
+ShellScript:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Interpreter: bash (5.2.21)
+    Time: Took too long
