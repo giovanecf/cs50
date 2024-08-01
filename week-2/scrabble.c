@@ -3,25 +3,7 @@
 
 int POINTS[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
 
-int get_points_by_word(char word[])
-{
-
-    int i = 0;
-    int sum = 0;
-    while(1 == 1)
-    {
-        if(word[i] == '\0') break;
-
-        int current_letter_as_num = (int) toupper(word[i]);
-
-        if(current_letter_as_num >= 65 && current_letter_as_num <= 90)
-            sum += POINTS[current_letter_as_num - 65];
-       
-        i++;
-    }
-
-    return sum;
-}
+int get_points_by_word(char word[]);
 
 int main(void)
 {
@@ -44,4 +26,25 @@ int main(void)
     else printf("We Got a Tie!! :-O \n");
 
     return 0;
+}
+
+
+int get_points_by_word(char word[])
+{
+
+    int i = 0;
+    int sum = 0;
+    while(1 == 1)
+    {
+        if(word[i] == '\0') break;
+
+        int current_char_as_num = (int) toupper(word[i]);
+
+        if(current_char_as_num >= 65 && current_char_as_num <= 90)
+            sum += POINTS[current_char_as_num - 65];
+       
+        i++;
+    }
+
+    return sum;
 }

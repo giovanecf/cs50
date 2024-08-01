@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/geovani/app/cs50/week-2",
-      "program": "/home/geovani/app/cs50/week-2/scrabble",
+      "program": "/home/geovani/app/cs50/week-2/readability",
       "linux": {
         "MIMode": "gdb",
         "miDebuggerPath": "/usr/bin/gdb"
