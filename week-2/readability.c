@@ -13,7 +13,7 @@ int main(void)
     printf("Entered:\n%s\n", text);
 
     int letters_counter = 0;
-    int spaces_counter = 1;// At least one word
+    int spaces_counter = 1; // At least one word
     int dots_counter = 0;
     int i = 0;
     while(1 == 1)
