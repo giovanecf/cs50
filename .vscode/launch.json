@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/geovani/app/cs50/week-2",
-      "program": "/home/geovani/app/cs50/week-2/readability",
+      "cwd": "/home/geovani/app/cs50/week-3",
+      "program": "/home/geovani/app/cs50/week-3/plurality",
       "linux": {
         "MIMode": "gdb",
         "miDebuggerPath": "/usr/bin/gdb"
