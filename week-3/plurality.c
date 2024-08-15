@@ -11,27 +11,75 @@ typedef struct
 
 int compute_vote(char name[], candidate* c_arr, int number_of_candidates);
 
-void merge_sort()
+int slice_arr(int arr[], int left_side_size, int right_side_size, int* left_side_arr, int* right_side_arr)
 {
 
-    int n[] = {2,1,4,6,3,7,8,5,9};
+    for(int i = 0; i < left_side_size; i++)
+    {
+        left_side_arr[i] = arr[i];
+    }
 
-    slice
+    for(int i = 0, j = left_side_size; j < left_side_size+right_side_size; i++, j++)
+    {
+        right_side_arr[i] = arr[j];
+    }
+}
 
-    merge
+int merge_sort(int arr[], int arr_size)
+{
 
-    order
+    if(arr_size == 1) return arr[0];
 
+    int left_side_size = 0;
+    int right_side_size = 0;
+    
+    if(arr_size % 2 == 0){
+        left_side_size = right_side_size = arr_size / 2;
+    } else {
+        left_side_size = arr_size / 2;
+        right_side_size = arr_size / 2 + 1;
+    }
 
-    log2 (n / 2)
+    printf("%d %d\n", left_side_size, right_side_size);
 
+    int left_side_arr[left_side_size];
+    int right_side_arr[right_side_size];
 
+    slice_arr(arr, left_side_size, right_side_size, left_side_arr, right_side_arr);
+
+    printf("---\n");
+
+    for(int i = 0; i < left_side_size; i++)
+    {
+        printf("%d\n", left_side_arr[i]);
+    }
+    
+    printf("---\n");
+
+    for(int i = 0; i < right_side_size; i++)
+    {
+        printf("%d\n", right_side_arr[i]);
+    }
+
+    printf("---\n");
+
+    int single_left = merge_sort(left_side_arr, left_side_size);
+
+    int single_right = merge_sort(right_side_arr, right_side_size);
+
+    if(single_left > single_right) 
 
 }
 
 int main(int argc, char **argv){
 
-    merge_sort();
+    int n[] = {2,1,4,6,3,7,8,5,9};
+ 
+    merge_sort(n, 9);
+
+    printf("Teste: %d", 3/2);
+
+    printf("\n");
 
     return 2;
 

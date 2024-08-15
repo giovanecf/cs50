@@ -1,7 +1,13 @@
 {
   "files.associations": {
     "string": "c",
-    "typeinfo": "c"
+    "typeinfo": "c",
+    "array": "c",
+    "deque": "c",
+    "unordered_map": "c",
+    "vector": "c",
+    "string_view": "c",
+    "initializer_list": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
