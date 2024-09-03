@@ -20,11 +20,13 @@ int slice_arr(candidate arr[], int left_side_size, int right_side_size, candidat
 void merge_sort_candidates(candidate* arr, int arr_size);
 
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
 
     int number_of_candidates = argc - 1;
 
-    if(number_of_candidates < 2){
+    if(number_of_candidates < 2)
+    {
         printf("Usage: ./plurality [candidate ...]\n");
         return 1;
     }
@@ -53,7 +55,8 @@ int main(int argc, char **argv){
         printf("Number of voters: ");
         scanf("%d", &votes_to_compute);
     
-    } while (votes_to_compute < 1);
+    } 
+    while (votes_to_compute < 1);
 
 
     for(int i = 0; i < votes_to_compute; i++)
@@ -64,7 +67,8 @@ int main(int argc, char **argv){
             printf("Vote %d: ", i + 1);
             scanf("%s", candidate_name);
             
-        } while (compute_vote(candidate_name, candidates, number_of_candidates) == 0);
+        } 
+        while (compute_vote(candidate_name, candidates, number_of_candidates) == 0);
         
     }
 

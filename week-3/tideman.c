@@ -136,13 +136,11 @@ bool vote(int rank, string name, int ranks[])
 {
     // TODO
 
-    printf("vote\n");
-
     for(int i = 0; i < candidate_count; i++)
     {
         if(strcmp(name, candidates[i]) == 0)
         {
-            printf("%s(ID: %d)\n", candidates[i], i);
+            printf("Voted on %s(ID: %d)!\n", candidates[i], i);
             ranks[rank] = i; // Get candidate 'ID'(in this case, array id)
             return true;
         }
@@ -206,7 +204,42 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
+    printf("SORT \n\n");
     // TODO
+    // I'm losing my mind in here just to finish this:
+
+    pair aux_pairs[MAX_PAIRS];
+    for(int i = 0; i < MAX_PAIRS; i++)
+    {
+        for(int j = 0; j < MAX_PAIRS - 1; j++)
+        {
+            int winner_pair_a = pairs[j].winner;
+            int loser_pair_a = pairs[j].loser;
+
+            int winner_pair_b = pairs[j + 1].winner;
+            int loser_pair_b = pairs[j + 1].loser;
+            
+            if(preferences[winner_pair_a][loser_pair_a] > preferences[winner_pair_b][loser_pair_b])
+            {
+                pair p1;
+                p1.winner = winner_pair_a;
+                p1.loser = loser_pair_a;
+                aux_pairs[j] = p1;
+
+                pair p2;
+                p2.winner = winner_pair_b;
+                p2.loser = loser_pair_b;
+                aux_pairs[j + 1] = p2;
+            }
+            
+        }
+    }
+
+    for(int i = 0; i < MAX_PAIRS; i++)
+    {
+        printf("%d/%d\n", pairs[i].winner, pairs[i].loser);
+    }
+
     return;
 }
 
