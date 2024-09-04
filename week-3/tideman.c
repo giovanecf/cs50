@@ -43,7 +43,7 @@ void print_winner(void);
 
 int main(int argc, string argv[])
 {
-    // Check for invalid usage
+   // Check for invalid usage
     if (argc < 2)
     {
         printf("Usage: tideman [candidate ...]\n");
@@ -204,11 +204,10 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    printf("SORT \n\n");
+    printf("\n\n SORT \n\n");
     // TODO
     // I'm losing my mind in here just to finish this:
-
-    pair aux_pairs[MAX_PAIRS];
+    
     for(int i = 0; i < MAX_PAIRS; i++)
     {
         for(int j = 0; j < MAX_PAIRS - 1; j++)
@@ -219,17 +218,17 @@ void sort_pairs(void)
             int winner_pair_b = pairs[j + 1].winner;
             int loser_pair_b = pairs[j + 1].loser;
             
-            if(preferences[winner_pair_a][loser_pair_a] > preferences[winner_pair_b][loser_pair_b])
+            if(preferences[winner_pair_a][loser_pair_a] < preferences[winner_pair_b][loser_pair_b])
             {
                 pair p1;
                 p1.winner = winner_pair_a;
                 p1.loser = loser_pair_a;
-                aux_pairs[j] = p1;
+                pairs[j + 1] = p1;
 
                 pair p2;
                 p2.winner = winner_pair_b;
                 p2.loser = loser_pair_b;
-                aux_pairs[j + 1] = p2;
+                pairs[j] = p2;
             }
             
         }
@@ -247,6 +246,21 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        locked[pairs[i].winner][pairs[i].loser] = 1;
+    }
+    
+    for (int i = 0; i < MAX; i++)
+    {
+        for (int j = 0; j < MAX; j++)
+        {
+            printf("%i | ", locked[i][j]);
+        }
+        printf("\n");
+    }
+
     return;
 }
 
@@ -254,5 +268,22 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+
+    for (int c = 0; c < candidate_count; c++)
+    {
+        bool has_locked_over = false;
+        for (int i = 0; i < MAX; i++)
+        {
+            if( locked[i][pairs[c].winner] == 1 ) has_locked_over = true; 
+        }
+
+        if(!has_locked_over)
+        {
+            printf("%s is the winner!\n", candidates[pairs[c].winner]);
+            return;
+        }
+    }
+
+    printf("No winner found!\n");
     return;
 }
