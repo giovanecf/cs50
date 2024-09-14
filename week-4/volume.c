@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 }
 
 /**
-      >>> BUT, what is the transfer speed?
+      >>> BUT, what is the transfer rate?
     
       >>>>> MACHINE
     
@@ -101,11 +101,11 @@ int main(int argc, char *argv[])
 
     >>>>> CALC
 
-    speed = SIZE / TIME
+    rate = SIZE / TIME
             352844 B / 0.021s
             0.352844 MB / 0.021s
 
-    speed = 16.802095238 MB/s
+    rate = 16.802095238 MB/s
 
     
     >>> COMPARE TO REGULAR 'cp'
@@ -118,10 +118,10 @@ int main(int argc, char *argv[])
 
     >>>>> CALC
 
-    speed = SIZE / TIME
+    rate = SIZE / TIME
             352844 B / 0.015s
             0.352844 MB / 0.015s
 
-    speed = 23.522933333 MB/s
+    rate = 23.522933333 MB/s
 
 */
