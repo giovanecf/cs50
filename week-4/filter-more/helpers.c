@@ -88,7 +88,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     /**
      * Create a copy to not read the same modify array.
-     * That way, I read the 'copy' variable and modify 'image' variable.
+     * Therefore, I read the 'copy' variable and modify 'image' variable.
      * BTW, I spend hours to 'realize' that.
      * (Thanks, chatGPT)
      *  */
