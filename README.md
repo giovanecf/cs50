@@ -2,7 +2,50 @@
 
 My solutions for the problem sets from the 2024 CS50 classes.  
 
-Course: [CS50 2024](https://cs50.harvard.edu/x/2024/)  
+Course: [CS50 2024](https://cs50.harvard.edu/x/2024/)
+
+## Awesome Finals Projects To C
+
+1. A Basic HTTP Server
+Why? Understand how web servers work.
+
+Features:
+
+Handle GET requests.
+
+Serve static files (HTML, images).
+
+Support multiple clients (forking/multithreading).
+
+Bonus: Add POST request handling (for forms).
+
+Challenge: Support CGI (run external programs like PHP).
+
+2. A Brainfuck Interpreter
+Why? Learn about parsing and interpreters.
+
+Features:
+
+Execute Brainfuck code (a minimalist esoteric language).
+
+Handle loops ([ ]) and memory manipulation.
+
+Bonus: Add debugging features (step execution).
+
+Challenge: Optimize for speed.
+
+3. A Chat Application (Client-Server)
+Why? Learn socket programming (networking).
+
+Features:
+
+Multiple clients connect to a server.
+
+Send/receive messages in real-time.
+
+Bonus: Add encryption (e.g., TLS-like security).
+
+Challenge: Support file transfers.
 
 ## FAQ
 
